@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans bg-white text-gray-900 antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold text-primary;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  .book-title {
+    @apply font-serif font-semibold;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-50;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-navy-400;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white font-medium px-6 py-3 rounded-lg hover:bg-accent-dark transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-primary text-white font-medium px-6 py-3 rounded-lg hover:bg-primary-light transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-medium px-6 py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-book hover:shadow-book-hover transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-book-hover;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:ring-red-500 focus:border-transparent;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-12 lg:py-16;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
+  }
+
+  .book-cover {
+    @apply aspect-[2/3] rounded-lg shadow-book overflow-hidden;
+  }
+
+  .star-rating {
+    @apply flex items-center text-gold-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-primary {
+    @apply bg-primary text-white;
+  }
+
+  .badge-accent {
+    @apply bg-accent text-white;
+  }
+
+  .badge-outline {
+    @apply border border-primary text-primary;
+  }
+
+  .skeleton {
+    @apply animate-pulse bg-gray-200 rounded;
+  }
+
+  .truncate-2 {
+    @apply overflow-hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .truncate-3 {
+    @apply overflow-hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .backdrop-blur {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
